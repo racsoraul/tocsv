@@ -21,11 +21,15 @@ However, the file has lines with the following data:
 ```
 123     NULL        NULL
 ```
+- The data is incomplete. The correlative number is the only data:
+```
+123
+```
 - The data is incomplete. Either NIT or DUI is missing, and the other one is NULL. Difficult to know for which that NULL stands for:
 ```
 123     NULL
 ```
-- The data is incomplete. It has the correlative and NIT or DUI:
+- The data is incomplete. It has the correlative number and NIT or DUI:
 ```
 123     12345678901234
 ```
@@ -33,8 +37,23 @@ However, the file has lines with the following data:
 ```
 123     12345678901234      123456789
 ```
+- The data is complete or incomplete, but NIT or DUI or both are wrong and do not have the right amount of digits:
+```
+123     123456789012      123456789
+123           1234567
+```
 - The data is complete or incomplete, and has random extra spaces at the beggining, end or in the middle of the values:
 ```
       123        12345678901234      123456789   
       123               123456789   
 ```
+- There are more than 3 values:
+```
+123        1234567890123 4      123456789   
+```
+
+## Lines to be skipped
+The lines where the data is wrong are skipped for the final CSV file:
+- NIT, DUI or both exist but haven't the right amount of digits
+- Empty line
+- Line with more than 3 values

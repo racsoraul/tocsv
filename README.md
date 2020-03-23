@@ -8,9 +8,22 @@ Tool to automate the transformation of a really ugly file with lots of inconsist
 > **NOTE:** This a very specific tool to help me with a really trivial task. It's not in any way generic. However, I'm leaving this open source in case it's useful for anyone as a reference, maybe.
 
 # Installation
+
+## Option 1:
+Download the latest binary. Go to [releases](https://github.com/racsoraul/tocsv/releases) and choose the one according to your OS.
+
+## Option 2:
 ```
 go get -u github.com/racsoraul/tocsv
 ```
+
+## Option 3:
+```
+git clone https://github.com/racsoraul/tocsv.git
+cd tocsv
+go build -o bin/
+```
+You'll find the binary in `tocsv/bin` directory.
 
 # Usage
 ```

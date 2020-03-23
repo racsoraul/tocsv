@@ -1,6 +1,7 @@
 package csv
 
 import (
+	"bytes"
 	"errors"
 	"fmt"
 	"io"
@@ -51,5 +52,21 @@ func ProcessLines(line string, isHeader bool) (string, error) {
 
 // LineCounter returns the number of lines read by a reader
 func LineCounter(r io.Reader) (int, error) {
-	return 0, nil
+	buffer := make([]byte, 32*1024)
+	counter := 0
+	lineStep := []byte{'\n'}
+
+	for {
+		n, err := r.Read(buffer)
+
+		if err == io.EOF {
+			return counter, nil
+		}
+
+		if err != nil {
+			return counter, err
+		}
+
+		counter += bytes.Count(buffer[:n], lineStep)
+	}
 }

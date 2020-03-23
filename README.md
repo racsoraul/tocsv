@@ -1,7 +1,28 @@
+[![GoDoc](https://godoc.org/github.com/racsoraul/tocsv?status.svg)](https://godoc.org/github.com/racsoraul/tocsv)
+[![Go Report Card](https://goreportcard.com/badge/github.com/racsoraul/tocsv)](https://goreportcard.com/report/github.com/racsoraul/tocsv)
+
+
 # Easing my life
 Tool to automate the transformation of a really ugly file with lots of inconsistent data to CSV format.
 
 > **NOTE:** This a very specific tool to help me with a really trivial task. It's not in any way generic. However, I'm leaving this open source in case it's useful for anyone as a reference, maybe.
+
+# Installation
+```
+go get -u github.com/racsoraul/tocsv
+```
+
+# Usage
+```
+tocsv <path to file>
+```
+
+It'll produce an `output.csv` file in the current directory.
+
+# Run tests
+```
+go test ./... -v -bench=. -benchmem
+```
 
 # Format of the input file
 

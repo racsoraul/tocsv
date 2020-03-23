@@ -70,5 +70,5 @@ func main() {
 
 	bar.Finish()
 
-	fmt.Println("\nCSV file succesfully created!")
+	fmt.Println("\nCSV file successfully created!")
 }
